@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">myApp</string>
+    <string name="email">Email</string>
+    <string name="button">Button</string>
+    <string name="todo">TODO</string>
+    <string name="lab1_xml_kotlin_and_java_in_android_studio">Lab1 - XML/Kotlin and Java in Android Studio</string>
+</resources>
