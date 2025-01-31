@@ -1,0 +1,1 @@
+To run Flutter App, open my_app in VS code and run.
