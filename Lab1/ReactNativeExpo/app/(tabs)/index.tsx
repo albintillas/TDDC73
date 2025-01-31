@@ -18,7 +18,7 @@ export default function HomeScreen() {
       <View style={styles.container}>
 
         <Image
-            source={require('@/assets/images/circle.png')} // You'll need to add your own image
+            source={require('@/assets/images/circle.png')}
             style={styles.circleImage}
             resizeMode="contain"
           />
@@ -44,7 +44,6 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* Email Input */}
         <View style={styles.inputContainer}>
           <Text style={styles.emailtext}>Email</Text>
           <TextInput

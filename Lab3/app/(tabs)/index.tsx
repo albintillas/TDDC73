@@ -131,18 +131,6 @@ export default function HomeScreen() {
               <Text style={styles.textBold}>Stars: </Text>
               <Text style={styles.text}>{item.stargazers_count}</Text>
             </View>
-            
-            {/*
-            <View style={styles.sidebyside}>
-              <Text style={styles.textBold}>Language: </Text>
-              <Text style={styles.text}>{item.language}</Text>
-            </View>
-
-            <View style={styles.sidebyside}>
-              <Text style={styles.textBold}>Description: </Text>
-              <Text style={styles.text}>{item.description}</Text>
-            </View>
-            */}
 
           </View>
         )}

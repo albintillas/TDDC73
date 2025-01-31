@@ -18,7 +18,6 @@ type CardType =
   | "diners_club"
   | "unknown"
 
-// NEW: Add card format configurations
 const CARD_FORMATS = {
   visa: {
     length: 16,
@@ -54,6 +53,7 @@ const CARD_FORMATS = {
 
 const CARD_BACKGROUND_COUNT = 25
 
+// Find a better way to get images??
 const getCardBackground = (index: number) => {
   const images = [
     require("@/assets/images/card/1.jpeg"),
@@ -111,7 +111,7 @@ const Card = () => {
     }))
   )
 
-  // NEW: Get card format based on type
+  // Get card format based on type
   const cardType = detectCardType(cardNumber) as CardType
   const cardFormat = CARD_FORMATS[cardType]
 
@@ -167,7 +167,6 @@ const Card = () => {
     flipCard(focused)
   }
 
-  // NEW: Add function to format card number according to groups
   const formatCardNumber = (number: string, groups: number[]): string[] => {
     let formattedGroups: string[] = []
     let currentIndex = 0
@@ -180,7 +179,6 @@ const Card = () => {
     return formattedGroups
   }
 
-  // MODIFIED: Updated renderCardNumber to use dynamic grouping
   const renderCardNumber = () => {
     const { length, groups } = cardFormat
     const masked = "X".repeat(length - cardNumber.length)
@@ -299,7 +297,6 @@ const Card = () => {
 
       {/* Input Fields */}
       <View style={styles.form}>
-        {/* MODIFIED: Dynamic maxLength for card number */}
         <TextInput
           style={styles.input}
           placeholder="Card Number"
@@ -344,7 +341,7 @@ const Card = () => {
             onFocus={() => handleFocus(false)}
             onBlur={() => handleFocus(false)}
           />
-          {/* MODIFIED: Dynamic maxLength for CVV */}
+          {/* Dynamic maxLength for CVV */}
           <TextInput
             style={[styles.lastInput, styles.inputSmall]}
             placeholder="CVV"
@@ -367,22 +364,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#EAF6FF", // Light blue background
+    backgroundColor: "#EAF6FF", 
     paddingVertical: 10,
   },
   cardContainer: {
     width: "90%",
-    aspectRatio: 1.6, // Standard credit card ratio
+    aspectRatio: 1.6,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20, // Space between card and form
-    borderRadius: 15, // Matches a modern card look
+    marginBottom: 20, 
+    borderRadius: 15, 
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.5,
     shadowRadius: 20,
-    elevation: 10, // For Android shadow effect
-    backgroundColor: "#FFF", // Backup if no background image
+    elevation: 10, 
+    backgroundColor: "#FFF", 
     overflow: "hidden",
     position: "absolute",
     zIndex: 1,
@@ -421,8 +418,8 @@ const styles = StyleSheet.create({
     marginTop: "28%",
   },
   digitGroup: {
-    flexDirection: "row", // Render digits in a row
-    marginHorizontal: 5, // Space between groups
+    flexDirection: "row", 
+    marginHorizontal: 5, 
   },
   logo: {
     width: 65,
@@ -436,7 +433,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#fff",
     textAlign: "center",
-    letterSpacing: 2, // Space out the digits for readability
+    letterSpacing: 2, 
     marginTop: "40%",
     fontWeight: "bold",
   },
